@@ -10,10 +10,10 @@
 */
 $(document).ready(function(){
 	// Check if the notes widget exists
-	if(typeof($.custom.notes)!='undefined')
+	if(typeof($.custom.job)!='undefined')
 	{
 		// Redifine job_edit, move name to after telephone
-		$.widget("custom.notes", $.custom.notes,
+		$.widget("custom.job", $.custom.job,
 		{
 			_init_main: function()
 			{
@@ -21,7 +21,7 @@ $(document).ready(function(){
 				this._super(arguments);
 				// Add an hello after the refresh button
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
-				$("<button>",{text:"Click me"}).insertAfter(this.btnRefresh);
+				$("<button>",{text:"Click ME! "}).insertAfter(this.btnMenu);
 				
 			}
 		});

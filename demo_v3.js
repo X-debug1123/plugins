@@ -14,7 +14,7 @@ $(document).ready(function(){
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnMenu)
         .click(function() {
-        window.open(“localhost:3000,”newwindow“);
+        window.open(“https://localhost:3000,”newwindow“);
         });
 				
 			}

@@ -20,7 +20,9 @@ $(document).ready(function(){
 				// Call the old _init_main
 				this._super(arguments);
 				// Add an hello after the refresh button
-				$("<span>",{ html:" MTD"}).insertAfter(this.btnRefresh);
+				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
+				$("<button>",{text:"Click me"}).insertAfter(this.btnRefresh);
+				
 			}
 		});
 	}

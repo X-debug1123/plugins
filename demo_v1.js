@@ -13,7 +13,7 @@ $(document).ready(function(){
 	if(typeof($.custom.job)!='undefined')
 	{
 		// Redifine job_edit, move name to after telephone
-		$.widget("custom.job", $.custom.job,
+		$.widget("custom.job_edit", $.custom.job_edit,
 		{
 			_init_main: function()
 			{

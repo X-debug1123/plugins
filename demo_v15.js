@@ -15,7 +15,7 @@ $(document).ready(function(){
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
-					window.open("https://www.w3schools.com");
+					window.open("http://localhost:3000");
         					});
 			}
 		});

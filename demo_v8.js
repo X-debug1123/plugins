@@ -12,10 +12,7 @@ $(document).ready(function(){
 				this._super(arguments);
 				// Add an hello after the refresh button
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
-				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
-        .click(function() {
-		console.log('Hi')
-        });
+				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh);
 				
 			}
 		});

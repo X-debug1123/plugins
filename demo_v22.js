@@ -18,7 +18,7 @@ $(document).ready(function(){
             				 console.log('hi');
 							 var c = a.grid.jqGrid("getGridParam", "selrow");
 							 console.log(c);
-							 var d= this.grid.find("#" + c + " .jqg_note").text();
+							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d)
 							 window.open("http://localhost:3000");
         					});

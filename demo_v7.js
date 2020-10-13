@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	// Check if the notes widget exists
-	if(typeof($.custom.job)!='undefined')
+	if(typeof($.custom.notes)!='undefined')
 	{
 		// Redifine job_edit, move name to after telephone
 		$.widget("custom.job_edit", $.custom.job_edit,

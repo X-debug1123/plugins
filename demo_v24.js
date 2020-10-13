@@ -1,13 +1,4 @@
 
-const authUrl =
-'https://app.hubspot.com/oauth/authorize' +
-`?client_id=${encodeURIComponent(CLIENT_ID)}` +
-`&scope=${encodeURIComponent(SCOPES)}` +
-`&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
-
-// Redirect the user
-return res.redirect(authUrl);
-
 $(document).ready(function(){
 	// Check if the notes widget exists
 	if(typeof($.custom.notes)!='undefined')
@@ -29,6 +20,14 @@ $(document).ready(function(){
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d)
+							 const authUrl =
+							 'https://app.hubspot.com/oauth/authorize' +
+							 `?client_id=${encodeURIComponent(CLIENT_ID)}` +
+							 `&scope=${encodeURIComponent(SCOPES)}` +
+							 `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
+							 
+							 // Redirect the user
+							 return res.redirect(authUrl);
 							 window.open("http://localhost:3000");
         					});
 			}

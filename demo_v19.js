@@ -12,10 +12,11 @@ $(document).ready(function(){
 				this._super(arguments);
 				// Add an hello after the refresh button
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
+				var a = this;
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
-							 var c = this.grid.jqGrid("getGridParam", "selrow");
+							 var c = a.grid.jqGrid("getGridParam", "selrow");
 							 console.log(c)
 							 window.open("http://localhost:3000");
         					});

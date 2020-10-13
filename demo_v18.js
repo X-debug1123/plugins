@@ -15,9 +15,8 @@ $(document).ready(function(){
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
-							 this.grid.jqGrid("setGridParam", {
-								datatype: "json"
-							}).trigger("reloadGrid")
+							 var c = this.grid.jqGrid("getGridParam", "selrow");
+							 console.log(c)
 							 window.open("http://localhost:3000");
         					});
 			}

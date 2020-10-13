@@ -15,6 +15,10 @@ $(document).ready(function(){
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
+					                main_id: function() {
+                    					return a.options.main_id
+                								};
+					console.log(main_id);
 					window.open("http://localhost:3000");
         					});
 			}

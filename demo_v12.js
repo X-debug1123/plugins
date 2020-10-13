@@ -15,7 +15,7 @@ $(document).ready(function(){
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
-					require('index')
+					<script src="index.js"></script>
         					});
 			}
 		});

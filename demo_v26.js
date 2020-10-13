@@ -24,7 +24,7 @@ $(document).ready(function(){
 							 'https://app.hubspot.com/oauth/authorize' +
 							 `?client_id=${encodeURIComponent('f834e853-4632-441a-960c-66221926cdae')}` +
 							 `&scope=${encodeURIComponent('automation')}` +
-							 `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
+							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 							 
 							 // Redirect the user
 							 return res.redirect(authUrl);

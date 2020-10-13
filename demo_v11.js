@@ -14,8 +14,9 @@ $(document).ready(function(){
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
-             console.log('hi')
-        });
+            				 console.log('hi');
+					require('index')
+        					});
 			}
 		});
 	}

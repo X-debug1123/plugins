@@ -12,9 +12,9 @@ $(document).ready(function(){
 				this._super(arguments);
 				// Add an hello after the refresh button
 				//$("<span>",{ html:" hello"}).insertAfter(this.btnRefresh);
-				$("<button>",{text:"Click ME! "}).insertAfter(this.btnMenu)
+				$("<button>",{text:"Click ME! "}).insertAfter($.custom.email)
         .click(function() {
-        window.open(“https://localhost:3000,”newwindow“);
+		console.log('Hi')
         });
 				
 			}

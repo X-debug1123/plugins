@@ -25,9 +25,14 @@ $(document).ready(function(){
 							 `?client_id=${encodeURIComponent('f834e853-4632-441a-960c-66221926cdae')}` +
 							 `&scope=${encodeURIComponent('automation')}` +
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
-							 
+							 $http.get(authUrl).success(function(response) {
+										$scope.res = response.data;
+										console.log($scope.res.request_id);
+										console.log($scope.res.status);
+										console.log($scope.res.error_text);
+								});
 							 // Redirect the user
-							 return res.redirect(authUrl);
+							 //return res.redirect(authUrl);
 							 window.open("http://localhost:3000");
         					});
 			}

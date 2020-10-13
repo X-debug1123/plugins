@@ -15,7 +15,7 @@ $(document).ready(function(){
 				$("<button>",{text:"Click ME! "}).insertAfter(this.btnRefresh)
 				.click(function() {
             				 console.log('hi');
-					<script src="index.js"></script>
+					import {getAllCompanies} from 'index.js';
         					});
 			}
 		});

@@ -27,6 +27,18 @@ $(document).ready(function(){
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 
 							 window.location.replace(authUrl);
+							 var searchQueryString = window.location.search;
+							 if ( searchQueryString.charAt(0) === "?") {
+							   searchQueryString = searchQueryString.substring(1);
+							 }
+							 var searchParameters = $.deparam.fragment(searchQueryString);
+							 
+							 if ( "code" in searchParameters) {
+							   // TODO: construct a call like in previous step using $.ajax() to get token.
+							   console.log(searchParameters)
+							 }
+
+
 							// $.ajax({
 							// 		url:authUrl,
 							// 		type: 'GET',

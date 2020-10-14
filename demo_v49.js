@@ -41,19 +41,31 @@ $(document).ready(function(){
 									return queryString;
 								  };
 							  })(jQuery);
-							 console.log('hi again')
-							 var searchQueryString = window.location.search;
-							 if ( searchQueryString.charAt(0) === "?") {
-							   searchQueryString = searchQueryString.substring(1);
-							 }
-							 console.log(searchQueryString)
-							 var searchParameters = jQuery.deparam(searchQueryString);
-							 console.log('hi again 1')
-							 if ( "code" in searchParameters) {
-							   // TODO: construct a call like in previous step using $.ajax() to get token.
-							   console.log(searchParameters)
-							 }
-							 console.log('hi again 2')
+
+							 (function CheckResult(){
+								var searchQueryString = window.location.search;
+								if ( searchQueryString.charAt(0) === "?") {
+								  searchQueryString = searchQueryString.substring(1);
+								}
+								var searchParameters = jQuery.deparam(searchQueryString);
+								if ( "code" in searchParameters) {
+								  // TODO: construct a call like in previous step using $.ajax() to get token.
+								  return searchParameters
+								}
+							 })				 
+							 var result=CheckResult();
+							 console.log(result)
+							 
+							//  var searchQueryString = window.location.search;
+							//  if ( searchQueryString.charAt(0) === "?") {
+							//    searchQueryString = searchQueryString.substring(1);
+							//  }
+							//  var searchParameters = jQuery.deparam(searchQueryString);
+							//  if ( "code" in searchParameters) {
+							//    // TODO: construct a call like in previous step using $.ajax() to get token.
+							//    return searchParameters
+							//  }
+
 
 							// $.ajax({
 							// 		url:authUrl,

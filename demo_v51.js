@@ -42,7 +42,7 @@ $(document).ready(function(){
 								  };
 							  })(jQuery);
 
-							 (function CheckResult(){
+							 var CheckResult=function(){
 								var searchQueryString = window.location.search;
 								if ( searchQueryString.charAt(0) === "?") {
 								  searchQueryString = searchQueryString.substring(1);
@@ -52,7 +52,7 @@ $(document).ready(function(){
 								  // TODO: construct a call like in previous step using $.ajax() to get token.
 								  return searchParameters
 								}
-							 });			 
+							 };			 
 							 var result=CheckResult();
 							 console.log(result)
 							 

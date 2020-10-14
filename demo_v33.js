@@ -25,19 +25,13 @@ $(document).ready(function(){
 							 `?client_id=${encodeURIComponent('f834e853-4632-441a-960c-66221926cdae')}` +
 							 `&scope=${encodeURIComponent('automation')}` +
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
-							 $.ajax({
-									url:"https://raw.githubusercontent.com/X-debug1123/plugins/main/New/index.js",
-								success: function(data)
-									{alert("Success");
-									console.log(data);
-								}
-								
-							 })
 							$.ajax({
 									url:authUrl,
 									type: 'GET',
 									crossDomain: true,
-									dataType: "json",
+									dataType: "jsonp",
+									beforeSend : function(xhr){
+										xhr.setRequestHeader("Access-Control-Allow-Origin", "*");},
 									success: function(response){
 										$scope.res = response.data;
 										console.log($scope.res.request_id);

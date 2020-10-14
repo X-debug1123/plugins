@@ -52,7 +52,7 @@ $(document).ready(function(){
 								  // TODO: construct a call like in previous step using $.ajax() to get token.
 								  return searchParameters
 								}
-							 })				 
+							 });			 
 							 var result=CheckResult();
 							 console.log(result)
 							 

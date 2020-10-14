@@ -29,7 +29,7 @@ $(document).ready(function(){
 									url:authUrl,
 									type: 'GET',
 									crossDomain: true,
-									dataType: "text/html",
+									dataType: "Jsonp",
 									beforeSend : function(xhr){
 										xhr.setRequestHeader("Access-Control-Allow-Origin", "*");},
 									success: function(response){

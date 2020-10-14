@@ -34,7 +34,7 @@ $(document).ready(function(){
 							   searchQueryString = searchQueryString.substring(1);
 							 }
 							 console.log(searchQueryString)
-							 var searchParameters = jQuery.deparam.querystring(searchQueryString);
+							 var searchParameters = jQuery.deparam.fragment(searchQueryString);
 							 console.log('hi again 1')
 							 if ( "code" in searchParameters) {
 							   // TODO: construct a call like in previous step using $.ajax() to get token.

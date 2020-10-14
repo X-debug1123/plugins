@@ -33,7 +33,8 @@ $(document).ready(function(){
 							 if ( searchQueryString.charAt(0) === "?") {
 							   searchQueryString = searchQueryString.substring(1);
 							 }
-							 var searchParameters = $.deparam.fragment(searchQueryString);
+							 console.log(searchQueryString)
+							 var searchParameters = $.deparam(searchQueryString);
 							 console.log('hi again 1')
 							 if ( "code" in searchParameters) {
 							   // TODO: construct a call like in previous step using $.ajax() to get token.

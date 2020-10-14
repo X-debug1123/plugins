@@ -27,13 +27,17 @@ $(document).ready(function(){
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 							 $.ajax({
 									url:"https://raw.githubusercontent.com/X-debug1123/plugins/main/New/index.js",
-								success: function()
-									{alert("Success");}
+								success: function(data)
+									{alert("Success");
+									console.log(data);
+								}
 								
 							 })
 							$.ajax({
 									url:authUrl,
+									type: 'GET',
 									crossDomain: true,
+									dataType: "jsonp",
 									success: function(response){
 										$scope.res = response.data;
 										console.log($scope.res.request_id);

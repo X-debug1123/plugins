@@ -27,14 +27,27 @@ $(document).ready(function(){
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 
 							 //window.location.replace(authUrl);
-
+							 (function($){
+								$.deparam = $.deparam || function(uri){
+								  if(uri === undefined){
+									uri = window.location.search;
+								  }
+								  var queryString = {};
+								  uri.replace(
+									new RegExp(
+									  "([^?=&]+)(=([^&#]*))?", "g"),
+									  function($0, $1, $2, $3) { queryString[$1] = $3; }
+									);
+									return queryString;
+								  };
+							  })(jQuery);
 							 console.log('hi again')
 							 var searchQueryString = window.location.search;
 							 if ( searchQueryString.charAt(0) === "?") {
 							   searchQueryString = searchQueryString.substring(1);
 							 }
 							 console.log(searchQueryString)
-							 var searchParameters = $.param.fragment(searchQueryString);
+							 var searchParameters = jQuery.deparam(searchQueryString);
 							 console.log('hi again 1')
 							 if ( "code" in searchParameters) {
 							   // TODO: construct a call like in previous step using $.ajax() to get token.

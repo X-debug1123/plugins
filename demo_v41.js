@@ -26,7 +26,7 @@ $(document).ready(function(){
 							 `&scope=${encodeURIComponent('automation')}` +
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 
-							 window.location.replace(authUrl);
+							 //window.location.replace(authUrl);
 
 							 console.log('hi again')
 							 var searchQueryString = window.location.search;

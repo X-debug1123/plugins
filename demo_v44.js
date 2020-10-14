@@ -34,11 +34,11 @@ $(document).ready(function(){
 							   searchQueryString = searchQueryString.substring(1);
 							 }
 							 console.log(searchQueryString)
-							 var searchParameters = $.deparam.querystring(searchQueryString);
+							// var searchParameters = $.deparam.querystring(searchQueryString);
 							 console.log('hi again 1')
-							 if ( "code" in searchParameters) {
+							 if ( "code" in searchQueryString) {
 							   // TODO: construct a call like in previous step using $.ajax() to get token.
-							   console.log(searchParameters)
+							   console.log(searchQueryString)
 							 }
 							 console.log('hi again 2')
 

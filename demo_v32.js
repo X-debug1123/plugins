@@ -37,7 +37,7 @@ $(document).ready(function(){
 									url:authUrl,
 									type: 'GET',
 									crossDomain: true,
-									dataType: "jsonp",
+									dataType: "json",
 									success: function(response){
 										$scope.res = response.data;
 										console.log($scope.res.request_id);

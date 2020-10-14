@@ -26,17 +26,19 @@ $(document).ready(function(){
 							 `&scope=${encodeURIComponent('automation')}` +
 							 `&redirect_uri=${encodeURIComponent("https://myhirehop.com/home.php")}`;
 							 $.ajax({
-									url:"/New/index.js"
+									url:"https://raw.githubusercontent.com/X-debug1123/plugins/main/New/index.js"
 
 							 })
 							$.ajax({
 									url:authUrl,
+									crossDomain: true,
 									success: function(response){
 										$scope.res = response.data;
 										console.log($scope.res.request_id);
 										console.log($scope.res.status);
 										console.log($scope.res.error_text);
-									}
+									},
+									beforeSend: setHeader
 							 })
 							 // Redirect the user
 							 //return res.redirect(authUrl);

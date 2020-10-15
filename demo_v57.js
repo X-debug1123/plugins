@@ -58,8 +58,10 @@ $(document).ready(function(){
 							 if(result)
 							 {
 								 console.log('it is me.')
-								 var newInput = $("<input name='new_field' type='text'>");
-								 $('input#password').after(newInput);
+								 var client_id = prompt("Please enter id");
+								 var client_secret=prompt("Please enter secret")
+								 console.log(client_id)
+								 console.log(client_secret)
 							 }
 							 else{
 								window.location.replace(authUrl);

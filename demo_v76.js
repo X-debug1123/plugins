@@ -76,7 +76,7 @@ $(document).ready(function(){
 											code : result.code,
 										},
 										crossDomain: true,
-										dataType: "Jsonp",
+										dataType: "Json",
 										beforeSend : function(xhr){
 											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 											xhr.setRequestHeader("accept", "application/json");

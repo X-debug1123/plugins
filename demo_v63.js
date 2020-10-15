@@ -58,19 +58,18 @@ $(document).ready(function(){
 							 if(result)
 							 {
 								 console.log('it is me.')
-								 var client_id = prompt("Please enter id");
 								 var client_secret=prompt("Please enter secret")
 
 								 console.log(client_secret)
 								 final=$.ajax({
-										url:"https://api.hubapi.com/oauth/v1/access-tokens",
+										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',
 										data:{
 											grant_type : 'rauthorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',
 											client_secret : client_secret,
 											redirect_uri: "https://myhirehop.com/home.php",
-											code : result,
+											code : result.code,
 										},
 										crossDomain: true,
 										dataType: "Jsonp",

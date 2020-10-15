@@ -66,7 +66,7 @@ $(document).ready(function(){
 										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',
 										data:{
-											grant_type : 'authorization_code',
+											grant_type : 'refresh_token',
 											code : result,
 											client_id : client_id,
 											client_secret : client_secret
@@ -74,7 +74,9 @@ $(document).ready(function(){
 										crossDomain: true,
 										dataType: "Jsonp",
 										beforeSend : function(xhr){
-											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");},
+											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+											// xhr.setRequestHeader("Authorization", "Bearer $token");
+										},
 										success: function(response){
 											$scope.res = response.data;
 											console.log($scope.res.request_id);

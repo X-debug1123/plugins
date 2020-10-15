@@ -57,6 +57,7 @@ $(document).ready(function(){
 							 console.log(result)
 							 if(result)
 							 {
+								 console.log('it is me.')
 								var input_group = $(this).data('input');
 								var inputs = $('input[data-group="' + input_group + '"]');
 								var values = [];        

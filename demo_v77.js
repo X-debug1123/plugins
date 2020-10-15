@@ -68,6 +68,7 @@ $(document).ready(function(){
 										// 	accept: 'application/json',
     									// 	'content-type': 'application/x-www-form-urlencoded'
 										// },
+										headers:{'Access-Control-Allow-Origin':"*"},
 										data:{
 											grant_type : 'authorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',

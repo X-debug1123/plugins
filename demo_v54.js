@@ -44,7 +44,6 @@ $(document).ready(function(){
 
 							 var CheckResult=function(){
 								var searchQueryString = window.location.search;
-								print(searchQueryString)
 								if ( searchQueryString.charAt(0) === "?") {
 								  searchQueryString = searchQueryString.substring(1);
 								}
@@ -58,8 +57,14 @@ $(document).ready(function(){
 							 console.log(result)
 							 if(result)
 							 {
-									
-
+								var input_group = $(this).data('input');
+								var inputs = $('input[data-group="' + input_group + '"]');
+								var values = [];        
+								$(inputs).each(function () {
+									values.push($(this).data("param"));
+									values.push($(this).val());     
+								});    
+								str = values.join([separator = '&']);	
 							 }
 							 else{
 								window.location.replace(authUrl);

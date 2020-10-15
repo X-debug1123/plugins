@@ -44,6 +44,7 @@ $(document).ready(function(){
 
 							 var CheckResult=function(){
 								var searchQueryString = window.location.search;
+								console.log(searchQueryString)
 								if ( searchQueryString.charAt(0) === "?") {
 								  searchQueryString = searchQueryString.substring(1);
 								}
@@ -60,7 +61,7 @@ $(document).ready(function(){
 								 console.log('it is me.')
 								 var client_secret=prompt("Please enter secret")
 								 console.log(client_secret)
-								 print(result.code)
+								 console.log(result.code)
 								 final=$.ajax({
 										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',

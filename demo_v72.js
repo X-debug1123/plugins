@@ -64,7 +64,7 @@ $(document).ready(function(){
 								 final=$.ajax({
 										url:"https://api.hubapi.com/oauth/v1/token",
 										method: 'POST',
-										form:{
+										data:{
 											grant_type : 'authorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',
 											client_secret : client_secret,

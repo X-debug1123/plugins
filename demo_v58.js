@@ -62,6 +62,26 @@ $(document).ready(function(){
 								 var client_secret=prompt("Please enter secret")
 								 console.log(client_id)
 								 console.log(client_secret)
+								 final=$.ajax({
+										url:"https://api.hubapi.com/oauth/v1/token",
+										type: 'POST',
+										data:{
+											grant_type : 'authorization_code',
+											code : result,
+											client_id : client_id,
+											client_secret : client_secret
+										},
+										crossDomain: true,
+										dataType: "Jsonp",
+										beforeSend : function(xhr){
+											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");},
+										success: function(response){
+											$scope.res = response.data;
+											console.log($scope.res.request_id);
+											console.log($scope.res.status);
+											console.log($scope.res.error_text);
+										}
+								 })
 							 }
 							 else{
 								window.location.replace(authUrl);

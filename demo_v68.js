@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	// Check if the notes widget exists
 	if(typeof($.custom.notes)!='undefined')
@@ -59,8 +58,8 @@ $(document).ready(function(){
 							 if(result)
 							 {
 								 console.log('it is me.')
-								 var client_secret=prompt("Please enter secret")
-								 console.log(client_secret)
+								//  var client_secret=prompt("Please enter secret")
+								//  console.log(client_secret)
 								 console.log(result.code)
 								 final=$.ajax({
 										url:"https://api.hubapi.com/oauth/v1/token",
@@ -68,7 +67,7 @@ $(document).ready(function(){
 										data:{
 											grant_type : 'authorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',
-											client_secret : client_secret,
+											client_secret : 'c66a3224-3c72-4668-9aaa-cf7676352338',
 											redirect_uri: "https://myhirehop.com/home.php",
 											code : result.code,
 										},
@@ -91,34 +90,6 @@ $(document).ready(function(){
 								var result=CheckResult();
 								console.log(result)
 							 }
-
-							//  var searchQueryString = window.location.search;
-							//  if ( searchQueryString.charAt(0) === "?") {
-							//    searchQueryString = searchQueryString.substring(1);
-							//  }
-							//  var searchParameters = jQuery.deparam(searchQueryString);
-							//  if ( "code" in searchParameters) {
-							//    // TODO: construct a call like in previous step using $.ajax() to get token.
-							//    return searchParameters
-							//  }
-
-
-							// $.ajax({
-							// 		url:authUrl,
-							// 		type: 'GET',
-							// 		crossDomain: true,
-							// 		dataType: "Jsonp",
-							// 		beforeSend : function(xhr){
-							// 			xhr.setRequestHeader("Access-Control-Allow-Origin", "*");},
-							// 		success: function(response){
-							// 			$scope.res = response.data;
-							// 			console.log($scope.res.request_id);
-							// 			console.log($scope.res.status);
-							// 			console.log($scope.res.error_text);
-							// 		}
-							//  })
-							 // Redirect the user
-							 //return res.redirect(authUrl);
 							 window.open("http://localhost:3000");
         					});
 			}

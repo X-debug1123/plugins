@@ -58,14 +58,8 @@ $(document).ready(function(){
 							 if(result)
 							 {
 								 console.log('it is me.')
-								var input_group = $(this).data('input');
-								var inputs = $('input[data-group="' + input_group + '"]');
-								var values = [];        
-								$(inputs).each(function () {
-									values.push($(this).data("param"));
-									values.push($(this).val());     
-								});    
-								str = values.join([separator = '&']);	
+								 var newInput = $("<input name='new_field' type='text'>");
+								 $('input#password').after(newInput);
 							 }
 							 else{
 								window.location.replace(authUrl);

@@ -76,7 +76,7 @@ $(document).ready(function(){
 										dataType: "Jsonp",
 										beforeSend : function(xhr){
 											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-											// xhr.setRequestHeader("Authorization", "Bearer $token");
+											xhr.setRequestHeader("Authorization", "Bearer $token");
 										},
 										success: function(response){
 											$scope.res = response.data;

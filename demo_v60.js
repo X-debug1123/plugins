@@ -66,10 +66,11 @@ $(document).ready(function(){
 										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',
 										data:{
-											grant_type : 'refresh_token',
-											code : result,
+											grant_type : 'rauthorization_code',
 											client_id : client_id,
-											client_secret : client_secret
+											client_secret : client_secret,
+											redirect_uri: "https://myhirehop.com/home.php",
+											code : result,
 										},
 										crossDomain: true,
 										dataType: "Jsonp",

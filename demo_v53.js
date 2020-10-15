@@ -62,7 +62,9 @@ $(document).ready(function(){
 
 							 }
 							 else{
-
+								window.location.replace(authUrl);
+								var result=CheckResult();
+								console.log(result)
 							 }
 
 							//  var searchQueryString = window.location.search;

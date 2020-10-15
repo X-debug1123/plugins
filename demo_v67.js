@@ -66,7 +66,7 @@ $(document).ready(function(){
 										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',
 										data:{
-											grant_type : 'rauthorization_code',
+											grant_type : 'authorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',
 											client_secret : client_secret,
 											redirect_uri: "https://myhirehop.com/home.php",

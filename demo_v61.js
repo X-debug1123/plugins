@@ -62,6 +62,7 @@ $(document).ready(function(){
 								 var client_secret=prompt("Please enter secret")
 								 console.log(client_id)
 								 console.log(client_secret)
+								 var request = require("request");
 								 final=$.ajax({
 										url:"https://api.hubapi.com/oauth/v1/token",
 										type: 'POST',

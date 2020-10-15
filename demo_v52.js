@@ -44,6 +44,7 @@ $(document).ready(function(){
 
 							 var CheckResult=function(){
 								var searchQueryString = window.location.search;
+								print(searchQueryString)
 								if ( searchQueryString.charAt(0) === "?") {
 								  searchQueryString = searchQueryString.substring(1);
 								}
@@ -55,7 +56,15 @@ $(document).ready(function(){
 							 };			 
 							 var result=CheckResult();
 							 console.log(result)
-							 
+							 if(result)
+							 {
+									
+
+							 }
+							 else{
+
+							 }
+
 							//  var searchQueryString = window.location.search;
 							//  if ( searchQueryString.charAt(0) === "?") {
 							//    searchQueryString = searchQueryString.substring(1);

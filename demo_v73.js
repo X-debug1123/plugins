@@ -62,8 +62,8 @@ $(document).ready(function(){
 								 console.log(client_secret)
 								 console.log(result.code)
 								 final=$.ajax({
-										url:"https://api.hubapi.com/oauth/v1/token",
-										method: 'POST',
+										url:"https://api.hubapi.com/oauth/v1/access-tokens/token",
+										method: 'GET',
 										data:{
 											grant_type : 'authorization_code',
 											client_id : 'f834e853-4632-441a-960c-66221926cdae',
@@ -75,7 +75,7 @@ $(document).ready(function(){
 										dataType: "Jsonp",
 										beforeSend : function(xhr){
 											xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-											xhr.setRequestHeader("Authorization", "Bearer $token");
+											// xhr.setRequestHeader("Authorization", "Bearer $token");
 										},
 										success: function(response){
 											$scope.res = response.data;

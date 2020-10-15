@@ -60,15 +60,14 @@ $(document).ready(function(){
 								 console.log('it is me.')
 								 var client_id = prompt("Please enter id");
 								 var client_secret=prompt("Please enter secret")
-								 console.log(client_id)
+
 								 console.log(client_secret)
-								 var request = require("request");
 								 final=$.ajax({
-										url:"https://api.hubapi.com/oauth/v1/token",
+										url:"https://api.hubapi.com/oauth/v1/access-tokens",
 										type: 'POST',
 										data:{
 											grant_type : 'rauthorization_code',
-											client_id : client_id,
+											client_id : 'f834e853-4632-441a-960c-66221926cdae',
 											client_secret : client_secret,
 											redirect_uri: "https://myhirehop.com/home.php",
 											code : result,

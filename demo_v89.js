@@ -22,7 +22,7 @@ $(document).ready(function(){
 							//  window.open("http://localhost:3000");
 
 							var result=$.ajax({
-								data: {note_info: d},
+								data: '{"note_info":' + d + '}',
 								type: "POST",
 								url: "http://localhost:8999/companies/helloworld",
 								success: function(res){

@@ -23,10 +23,10 @@ $(document).ready(function(){
 
 							var result=$.ajax({
 								data: {note: d},
-								type: "post",
+								type: "POST",
 								url: "http://localhost:8999/companies/helloworld",
-								success: function(data){
-									 alert("Posted: " + data);
+								success: function(res){
+									 alert("Posted: " + res);
 								}
 					   		});
 							console.log(result)

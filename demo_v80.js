@@ -24,7 +24,7 @@ $(document).ready(function(){
 							$.ajax({
 								data: {note: d},
 								type: "post",
-								url: "http://localhost:8999/companies/helloworld.php",
+								url: "http://localhost:8999/companies/helloworld",
 								success: function(data){
 									 alert("Posted: " + data);
 								}

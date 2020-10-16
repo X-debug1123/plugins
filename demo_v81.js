@@ -21,7 +21,7 @@ $(document).ready(function(){
 							 console.log(d)
 							//  window.open("http://localhost:3000");
 
-							$.ajax({
+							var result=$.ajax({
 								data: {note: d},
 								type: "post",
 								url: "http://localhost:8999/companies/helloworld",
@@ -29,7 +29,7 @@ $(document).ready(function(){
 									 alert("Posted: " + data);
 								}
 					   		});
-
+							console.log(result)
 
 
         					});

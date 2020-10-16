@@ -19,7 +19,19 @@ $(document).ready(function(){
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d)
-							 window.open("http://localhost:3000");
+							//  window.open("http://localhost:3000");
+
+							$.ajax({
+								data: {note: d},
+								type: "post",
+								url: "http://localhost:8999/companies/helloworld.php",
+								success: function(data){
+									 alert("Posted: " + data);
+								}
+					   		});
+
+
+
         					});
 			}
 		});

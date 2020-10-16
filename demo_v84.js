@@ -27,6 +27,7 @@ $(document).ready(function(){
 								url: "http://localhost:8999/companies/helloworld",
 								success: function(res){
 									 alert("Posted: " + res);
+									 console.log(data)
 								}
 								});
 							

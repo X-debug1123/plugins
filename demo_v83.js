@@ -18,7 +18,7 @@ $(document).ready(function(){
 							 var c = a.grid.jqGrid("getGridParam", "selrow");
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
-							 console.log(d)
+							 console.log(d);
 							//  window.open("http://localhost:3000");
 
 							var result=$.ajax({
@@ -28,8 +28,9 @@ $(document).ready(function(){
 								success: function(res){
 									 alert("Posted: " + res);
 								}
-					   		});
-							console.log(result)
+								});
+							
+							console.log(result);
 
 
         					});

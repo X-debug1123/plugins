@@ -22,9 +22,8 @@ $(document).ready(function(){
 							//  window.open("http://localhost:3000");
 
 							var result=$.ajax({
-								data: '{"note_info":' + d + '}',
+								data: JSON.stringify('{"note_info":' + d + '}'),
 								contentType: 'application/json',
-    							data: JSON.stringify(data),
 								type: "POST",
 								url: "http://localhost:5000/api/notes",
 								success: function(res){

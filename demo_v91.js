@@ -24,7 +24,7 @@ $(document).ready(function(){
 							var result=$.ajax({
 								data: '{"note_info":' + d + '}',
 								type: "POST",
-								url: "http://localhost:5000/notes",
+								url: "http://localhost:5000/api/notes",
 								success: function(res){
 									 alert("Posted: " + res.data);
 								}

@@ -28,7 +28,7 @@ $(document).ready(function(){
 								type: "POST",
 								url: "http://localhost:5000/api/notes",
 								success: function(res){
-									 alert("Posted: " + res.data);
+									 alert("Posted: " + res);
 								}
 								});
 							

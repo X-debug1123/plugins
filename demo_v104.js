@@ -20,15 +20,15 @@ $(document).ready(function(){
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d);
 							//  window.open("http://localhost:3000");
-							const dataStr=`note_info: ${d} `;
+							const dataStr=`note: ${d} `;
 							var result=$.ajax({
 								// data: JSON.parse({note: d}),
-								data:{name:"ravi",age:"31"},
+								data:{note: d},
 								// contentType: 'application/json',
 								type: "POST",
 								url: "http://localhost:5000/api/notes",
 								success: function(res){
-									 alert("Posted: " + res.name);
+									 alert("Posted: " + res.note);
 								}
 								});
 							

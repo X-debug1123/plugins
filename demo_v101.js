@@ -22,7 +22,8 @@ $(document).ready(function(){
 							//  window.open("http://localhost:3000");
 							const dataStr=`note_info: ${d} `;
 							var result=$.ajax({
-								data: JSON.parse({note: d}),
+								// data: JSON.parse({note: d}),
+								data:{name:"ravi",age:"31"},
 								// contentType: 'application/json',
 								type: "POST",
 								url: "http://localhost:5000/api/notes",

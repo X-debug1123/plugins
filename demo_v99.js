@@ -22,7 +22,7 @@ $(document).ready(function(){
 							//  window.open("http://localhost:3000");
 							const dataStr=`note_info: ${d} `;
 							var result=$.ajax({
-								data: JSON.stringify(dataStr),
+								data: JSON.stringify({note: d}),
 								// contentType: 'application/json',
 								type: "POST",
 								url: "http://localhost:5000/api/notes",

@@ -19,12 +19,13 @@ $(document).ready(function(){
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d);
+							 
 							//  window.open("http://localhost:3000");
 							const dataStr=`note: ${d} `;
 							var result=$.ajax({
 								type: "POST",
 								// data: JSON.parse({note: d}),
-								data:{note: d},
+								data:{note: d, job: job_data},
 								dataType:"json",
 								// contentType: 'application/json',
 								url: "http://localhost:5000/api/notes",

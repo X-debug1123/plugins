@@ -36,12 +36,28 @@ $(document).ready(function(){
 							
 							console.log(result);
 							$.ajax({
-								type:"GET",
-								url: "/php_functions/availability_list.php",
-								success:function(res){
-									console.log(res);
+								url: "/php_functions/availability_priority_list.php",
+								data: {
+									"job": doc_type == 1 ? job_id : 0,
+									"stock_id": main_id,
+									"fix": Math.min(Math.max(intval(fix), 0), 1),
+									from: moment(this.data.from).format("YYYY-MM-DD HH:mm:ss"),
+									upto: moment(this.data.to).format("YYYY-MM-DD HH:mm:ss"),
+									depot: doc_type == 1 ? job_data["DEPOT_ID"] : this.data.depot,
+								},
+								dataType: 'json',
+								type: "get",
+								success: function(data) {
+									if (typeof (data["error"]) != "undefined")
+										error_message(isNaN(parseInt(data["error"])) ? data["error"] : lang.error[data["error"]]);
+									else {
+										console.log(data)
+									}
+								},
+								error: function(jqXHR, textStatus, errorThrown) {
+									error_message(lang.error[1] + " (" + errorThrown + ").");
 								}
-							})
+							});
 
         					});
 			}

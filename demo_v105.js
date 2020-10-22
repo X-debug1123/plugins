@@ -27,7 +27,6 @@ $(document).ready(function(){
 								data:{note: d},
 								dataType:"json",
 								// contentType: 'application/json',
-								cache:false,
 								url: "http://localhost:5000/api/notes",
 								success: function(res){
 									 alert("Posted: " + res.note);

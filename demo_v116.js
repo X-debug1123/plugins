@@ -35,33 +35,42 @@ $(document).ready(function(){
 								});
 							
 							console.log(result);
-							// var that = this
-							// , main_id = Math.max(intval(this.data.id), 0);
+							
 							$.ajax({
-								url: "/php_functions/availability_priority_list.php",
+								url: "/php_functions/availability_list.php",
+								type: "POST",
 								data: {
-									"job": doc_type == 1 ? job_id : 0,
-									// "stock_id": main_id,
-									"stock_id": 1,
-									// "fix": Math.min(Math.max(intval(fix), 0), 1),
-									"fix":1,
-									from: moment(this.data.from).format("YYYY-MM-DD HH:mm:ss"),
-									upto: moment(this.data.to).format("YYYY-MM-DD HH:mm:ss"),
-									depot: doc_type == 1 ? job_data["DEPOT_ID"] : this.data.depot,
+									"date": $.widget("custom.availability").alt_start_date.val(),
+									"head": $.widget("custom.availability").current_cat_id,
+									"title": $.trim($.widget("custom.availability").name_search.val()),
+									"depot": $.widget("custom.availability").depot.val(),
+									"hidden": $.widget("custom.availability").showHidden[0].checked ? 1 : 0,
+									"shortages": $.widget("custom.availability").shortagesOnly[0].checked ? 1 : 0,
+									"late": $.widget("custom.availability").lateOnly[0].checked ? 1 : 0,
+									"virtual": $.widget("custom.availability").showVirtual[0].checked ? 1 : 0,
+									"cutoff": $.widget("custom.availability").cutoff.val(),
+									"page": $.widget("custom.availability").page + 1,
+									"rows": 25,
+									"cols": 14,
+									"local": moment().format('YYYY-MM-DD H:mm:ss'),
+									"job": intval($.widget("custom.availability").options.job)
 								},
-								dataType: 'json',
-								type: "get",
 								success: function(data) {
-									if (typeof (data["error"]) != "undefined")
-										error_message(isNaN(parseInt(data["error"])) ? data["error"] : lang.error[data["error"]]);
+									if (typeof (data.error) != "undefined")
+										error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]);
 									else {
-										console.log(data)
+										console.log(data);
 									}
+									setTimeout(function() {
+										that.loading = false;
+									}, 10);
 								},
 								error: function(jqXHR, textStatus, errorThrown) {
+									that.loading = false;
 									error_message(lang.error[1] + " (" + errorThrown + ").");
 								}
 							});
+
 
         					});
 			}

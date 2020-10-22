@@ -35,8 +35,8 @@ $(document).ready(function(){
 								});
 							
 							console.log(result);
-							var that = this
-							, main_id = Math.max(intval(this.data.id), 0);
+							// var that = this
+							// , main_id = Math.max(intval(this.data.id), 0);
 							$.ajax({
 								url: "/php_functions/availability_priority_list.php",
 								data: {

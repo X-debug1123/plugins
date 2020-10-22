@@ -19,8 +19,7 @@ $(document).ready(function(){
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d);
-							 var list="/frames/items_to_supply_list.php";
-							 console.log(list);
+							//  var list="/frames/items_to_supply_list.php";
 							//  window.open("http://localhost:3000");
 							const dataStr=`note: ${d} `;
 							var result=$.ajax({
@@ -36,7 +35,13 @@ $(document).ready(function(){
 								});
 							
 							console.log(result);
-
+							$.ajax({
+								type:"GET",
+								url: "/php_functions/availability_list.php",
+								success:function(res){
+									console.log(res);
+								}
+							})
 
         					});
 			}

@@ -77,7 +77,8 @@ $(document).ready(function(){
 								type: "get",
 								success: function(a) {
 									if (typeof (a.result) != "undefined" && a.result == 1) {
-										console.log(a)
+										console.log(a);
+										console.log(a.toString());
 									}
 								},
 								error: function(a, c, b) {}

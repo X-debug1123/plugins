@@ -40,20 +40,20 @@ $(document).ready(function(){
 								url: "/php_functions/availability_list.php",
 								type: "POST",
 								data: {
-									"date": $.widget("custom.availability").alt_start_date.val(),
-									"head": $.widget("custom.availability").current_cat_id,
-									"title": $.trim($.widget("custom.availability").name_search.val()),
-									"depot": $.widget("custom.availability").depot.val(),
-									"hidden": $.widget("custom.availability").showHidden[0].checked ? 1 : 0,
-									"shortages": $.widget("custom.availability").shortagesOnly[0].checked ? 1 : 0,
-									"late": $.widget("custom.availability").lateOnly[0].checked ? 1 : 0,
-									"virtual": $.widget("custom.availability").showVirtual[0].checked ? 1 : 0,
-									"cutoff": $.widget("custom.availability").cutoff.val(),
-									"page": $.widget("custom.availability").page + 1,
+									"date": $("#dummy").data("custom.availability").alt_start_date.val(),
+									"head": $("#dummy").data("custom.availability").current_cat_id,
+									"title": $.trim($("#dummy").data("custom.availability").name_search.val()),
+									"depot": $("#dummy").data("custom.availability").depot.val(),
+									"hidden": $("#dummy").data("custom.availability").showHidden[0].checked ? 1 : 0,
+									"shortages": $("#dummy").data("custom.availability").shortagesOnly[0].checked ? 1 : 0,
+									"late": $("#dummy").data("custom.availability").lateOnly[0].checked ? 1 : 0,
+									"virtual": $("#dummy").data("custom.availability").showVirtual[0].checked ? 1 : 0,
+									"cutoff": $("#dummy").data("custom.availability").cutoff.val(),
+									"page": $("#dummy").data("custom.availability").page + 1,
 									"rows": 25,
 									"cols": 14,
 									"local": moment().format('YYYY-MM-DD H:mm:ss'),
-									"job": intval($.widget("custom.availability").options.job)
+									"job": intval($("#dummy").data("custom.availability").options.job)
 								},
 								success: function(data) {
 									if (typeof (data.error) != "undefined")

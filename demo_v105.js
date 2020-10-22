@@ -22,10 +22,12 @@ $(document).ready(function(){
 							//  window.open("http://localhost:3000");
 							const dataStr=`note: ${d} `;
 							var result=$.ajax({
+								type: "POST",
 								// data: JSON.parse({note: d}),
 								data:{note: d},
+								dataType:"json",
 								// contentType: 'application/json',
-								type: "POST",
+								cache:false,
 								url: "http://localhost:5000/api/notes",
 								success: function(res){
 									 alert("Posted: " + res.note);

@@ -41,7 +41,8 @@ $(document).ready(function(){
 								url: "/php_functions/availability_priority_list.php",
 								data: {
 									"job": doc_type == 1 ? job_id : 0,
-									"stock_id": main_id,
+									// "stock_id": main_id,
+									"stock_id": 1,
 									"fix": Math.min(Math.max(intval(fix), 0), 1),
 									from: moment(this.data.from).format("YYYY-MM-DD HH:mm:ss"),
 									upto: moment(this.data.to).format("YYYY-MM-DD HH:mm:ss"),

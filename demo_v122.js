@@ -83,7 +83,23 @@ $(document).ready(function(){
 								},
 								error: function(a, c, b) {}
 							})
+							$.ajax({
+								url: "/php_functions/availability_job_priority_list.php",
+								data: {
+									job: job_id
+								},
+								dataType: "json",
+								type: "get",
+								success: function(a) {
+										console.log(a);
+										console.log(a.toString());
+								},
+								error: function(a, c, b) {}
+							})
 
+
+
+							
 
 
         					});

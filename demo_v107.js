@@ -103,7 +103,8 @@ $(document).ready(function(){
             style.styleSheet.cssText = css;
         else
             style.appendChild(document.createTextNode(css));
-        document.head.appendChild(style);
+		document.head.appendChild(style);
+		lang["jobTxt"] ="I call it differnet name"; 
 		var job_header = $('<div>', { class:"job_header ui-corner-all"}).insertAfter($("#comp_logo").parent());
 		var table = $('<table>', { class:"job_header_table"}).appendTo(job_header);
 		var tr = $("<tr>").appendTo(table);

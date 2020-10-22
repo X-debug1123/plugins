@@ -50,8 +50,8 @@ $(document).ready(function(){
 									// "virtual": $("#dummy").data("custom.availability").showVirtual[0].checked ? 1 : 0,
 									// "cutoff": $("#dummy").data("custom.availability").cutoff.val(),
 									// "page": $("#dummy").data("custom.availability").page + 1,
-									// "rows": 25,
-									// "cols": 14,
+									"rows": 25,
+									"cols": 14,
 									// "local": moment().format('YYYY-MM-DD H:mm:ss'),
 									"job": 1
 								},
@@ -61,9 +61,6 @@ $(document).ready(function(){
 									else {
 										console.log(data);
 									}
-									setTimeout(function() {
-										that.loading = false;
-									}, 10);
 								},
 								error: function(jqXHR, textStatus, errorThrown) {
 									that.loading = false;

@@ -85,12 +85,14 @@ $(document).ready(function(){
 							})
 							console.log("start to create job");
 							const params ={
+								calc_late_fees: "0",
+								allow_early_returns: "0",
 								address: "",
-								client_id: "0",
+								client_id: "",
 								client_ref: "",
 								collect: "0",
 								company: "MTD",
-								created: "Xinyue - 23/10/2020",
+								created: "2020-10-23 13:10",
 								default_disc: "0",
 								deliver: "0",
 								depot: "1",
@@ -117,7 +119,7 @@ $(document).ready(function(){
 								venue: "",
 								venue_address: "",
 								venue_telephone: "",
-								new_job_data: 1
+								new_job_data: 0
 							};
 							$.ajax({
 								url: "/php_functions/job_save.php",

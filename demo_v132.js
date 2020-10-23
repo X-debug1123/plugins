@@ -116,8 +116,8 @@ $(document).ready(function(){
 								type: "",
 								venue: "",
 								venue_address: "",
-								venue_telephone: ""
-
+								venue_telephone: "",
+								new_job_data: 1
 							};
 							$.ajax({
 								url: "/php_functions/job_save.php",

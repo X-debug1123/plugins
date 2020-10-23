@@ -52,7 +52,7 @@ $(document).ready(function(){
 									// "page": $("#dummy").data("custom.availability").page + 1,
 									"rows": 25,
 									"cols": 14,
-									// "local": moment().format('YYYY-MM-DD H:mm:ss'),
+									"local": moment().format('YYYY-MM-DD H:mm:ss'),
 									"job": 1
 								},
 								success: function(data) {
@@ -67,7 +67,8 @@ $(document).ready(function(){
 									error_message(lang.error[1] + " (" + errorThrown + ").");
 								}
 							});
-
+							const now= new Date;
+							const now_format=moment(now).format('YYYY-MM-DD HH:mm:ss');
 							//job_items
 							console.log("start items per job...");
 							$.ajax({
@@ -79,7 +80,7 @@ $(document).ready(function(){
 									fix: 0,
 									c: "",
 									grp: "",
-									local: "2020-10-23 14:54:47"
+									local: now_format
 								},
 								success: function(data) {
 									if (typeof (data.error) != "undefined")

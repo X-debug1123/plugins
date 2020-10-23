@@ -195,6 +195,7 @@ $(document).ready(function(){
 			this._super(arguments);
 			console.log("job_edit");
 			console.log( this.get_save_params());
+			console.log(this.job_edit_form.serializeObject());
 			}
 		});
 	}

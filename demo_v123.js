@@ -71,7 +71,7 @@ $(document).ready(function(){
 							$.ajax({
 								url: "/php_functions/job_check_shortage.php",
 								data: {
-									job: 1
+									job: job_ID
 								},
 								dataType: "json",
 								type: "get",
@@ -83,19 +83,20 @@ $(document).ready(function(){
 								},
 								error: function(a, c, b) {}
 							})
-							$.ajax({
-								url: "/php_functions/availability_job_priority_list.php",
-								data: {
-									job: 1
-								},
-								dataType: "json",
-								type: "get",
-								success: function(a) {
-										console.log(a);
-										console.log(a.toString());
-								},
-								error: function(a, c, b) {}
-							})
+							console.log("end");
+							// $.ajax({
+							// 	url: "/php_functions/availability_job_priority_list.php",
+							// 	data: {
+							// 		job: job_ID
+							// 	},
+							// 	dataType: "json",
+							// 	type: "get",
+							// 	success: function(a) {
+							// 			console.log(a);
+							// 			console.log(a.toString());
+							// 	},
+							// 	error: function(a, c, b) {}
+							// })
 
 
 

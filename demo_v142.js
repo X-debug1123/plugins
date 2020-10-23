@@ -123,10 +123,10 @@ $(document).ready(function(){
 								priority_confirm: 0,
 								id_main: 0,
 								proj: 0,
-								created: "2020-10-23 13:26",
+								created: "2020-10-23 13:36",
 								client_id: "",
 								inv_address:"" ,
-								name: "y",
+								name: "xinyue",
 								company: "",
 								address: "",
 								telephone: "",
@@ -144,7 +144,7 @@ $(document).ready(function(){
 								client_ref: "",
 								default_disc: 0,
 								price_group: 0,
-								job_name: "",
+								job_name: "from js",
 								depot: 1,
 								duration_scheme: "7dayw",
 								calc_late_fees: 0,
@@ -179,13 +179,7 @@ $(document).ready(function(){
 												newWindow.close();
 										}
 									} else {
-										if (that.id_main.val() == 0 && that.options.open_new_job_window) {
-											if (typeof (newWindow) != "undefined")
-												newWindow.location.href = "/job.php?id=" + parseInt(data.ID);
-											else
-												window.open("/job.php?id=" + parseInt(data.ID), "_self");
-											that.reset_job();
-										}
+											console.log(data)
 									}
 								},
 								error: function(jqXHR, textStatus, errorThrown) {

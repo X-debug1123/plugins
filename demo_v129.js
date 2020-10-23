@@ -91,7 +91,8 @@ $(document).ready(function(){
 								"to":"2020-11-12 08:00:00",
 								"fields": null,
 								"name":user.NAME,
-								"email":user.EMAIL
+								"email":user.EMAIL,
+								"new_job_data":1
 
 							};
 							// $.ajax({
@@ -169,6 +170,7 @@ $(document).ready(function(){
 				// Call the old _init_main
 			this._super(arguments);
 			console.log("job_edit");
+			console.log(params)
 			}
 		});
 	}

@@ -94,45 +94,45 @@ $(document).ready(function(){
 								"email":user.EMAIL
 
 							};
-							$.ajax({
-								url: "/php_functions/job_save.php",
-								type: "POST",
-								dataType: 'json',
-								data: params,
-								success: function(data) {
-									console.log(data);
-									if (typeof (data.error) != "undefined") {
-										var jobs_list = "";
-										if (typeof (data.jobs) != "undefined")
-											$.each(data.jobs, function(i, v) {
-												jobs_list += (jobs_list == "" ? "" : ", ") + '<a href="/job.php?id=' + v + '"' + (user["NEW_TABS"] == 1 ? ' target="_blank"' : "") + ">" + v + "</a>";
-											})
-										if (data.error == 160) {
-											confirm_message(lang.error[160] + "<br><b>" + jobs_list + "</b>", function() {
-												that.priority_confirm.val(1);
-												that.save_job_form();
-											});
-										} else {
-											error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]) + (jobs_list == "" ? "" : "<br><b>" + jobs_list + "</b>");
-											if (typeof (newWindow) != "undefined")
-												newWindow.close();
-										}
-									} else {
-										if (that.id_main.val() == 0 && that.options.open_new_job_window) {
-											if (typeof (newWindow) != "undefined")
-												newWindow.location.href = "/job.php?id=" + parseInt(data.ID);
-											else
-												window.open("/job.php?id=" + parseInt(data.ID), "_self");
-											that.reset_job();
-										}
-									}
-								},
-								error: function(jqXHR, textStatus, errorThrown) {
-									if (typeof (newWindow) != "undefined")
-										newWindow.close();
-									error_message(lang.error[1] + " (" + errorThrown + ").");
-								}
-							});
+							// $.ajax({
+							// 	url: "/php_functions/job_save.php",
+							// 	type: "POST",
+							// 	dataType: 'json',
+							// 	data: params,
+							// 	success: function(data) {
+							// 		console.log(data);
+							// 		if (typeof (data.error) != "undefined") {
+							// 			var jobs_list = "";
+							// 			if (typeof (data.jobs) != "undefined")
+							// 				$.each(data.jobs, function(i, v) {
+							// 					jobs_list += (jobs_list == "" ? "" : ", ") + '<a href="/job.php?id=' + v + '"' + (user["NEW_TABS"] == 1 ? ' target="_blank"' : "") + ">" + v + "</a>";
+							// 				})
+							// 			if (data.error == 160) {
+							// 				confirm_message(lang.error[160] + "<br><b>" + jobs_list + "</b>", function() {
+							// 					that.priority_confirm.val(1);
+							// 					that.save_job_form();
+							// 				});
+							// 			} else {
+							// 				error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]) + (jobs_list == "" ? "" : "<br><b>" + jobs_list + "</b>");
+							// 				if (typeof (newWindow) != "undefined")
+							// 					newWindow.close();
+							// 			}
+							// 		} else {
+							// 			if (that.id_main.val() == 0 && that.options.open_new_job_window) {
+							// 				if (typeof (newWindow) != "undefined")
+							// 					newWindow.location.href = "/job.php?id=" + parseInt(data.ID);
+							// 				else
+							// 					window.open("/job.php?id=" + parseInt(data.ID), "_self");
+							// 				that.reset_job();
+							// 			}
+							// 		}
+							// 	},
+							// 	error: function(jqXHR, textStatus, errorThrown) {
+							// 		if (typeof (newWindow) != "undefined")
+							// 			newWindow.close();
+							// 		error_message(lang.error[1] + " (" + errorThrown + ").");
+							// 	}
+							// });
 
 							console.log("end");
 							// $.ajax({
@@ -158,6 +158,22 @@ $(document).ready(function(){
 			}
 		});
 	}
+
+	if(typeof($.custom.job_edit)!='undefined')
+	{
+		// Redifine job_edit, move name to after telephone
+		$.widget("custom.job_edit", $.custom.job_edit,
+		{
+			_init_main: function()
+			{
+				// Call the old _init_main
+			this._super(arguments);
+			console.log("job_edit");
+			}
+		});
+	}
+
+
 	if (typeof(depots)!="undefined" && depots.length>1)
 	{
 		//Get all Depots from depots array and put them in the dep object

@@ -195,8 +195,10 @@ $(document).ready(function(){
 			this._super(arguments);
 			console.log("job_edit");
 			console.log( this.get_save_params());
-			console.log(this.save_job_form().params);
-			console.log($.extend({}, this.fields.data("fields")));
+			var params = this.get_save_params();
+			params["new_job_data"] = !this.options.open_new_job_window ? 1 : 0;
+			console.log(params);
+			// console.log($.extend({}, this.fields.data("fields")));
 			}
 		});
 	}

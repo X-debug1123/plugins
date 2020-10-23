@@ -100,7 +100,7 @@ $(document).ready(function(){
 								duration_scheme: "7dayw",
 								email: user.email,
 								end: "2020-11-11 08:00:00",
-								fields: $.extend({}, this.fields.data("fields")),
+								fields: {},
 								id_main: "0",
 								inv_address: "",
 								job_name: "From js",
@@ -195,7 +195,8 @@ $(document).ready(function(){
 			this._super(arguments);
 			console.log("job_edit");
 			console.log( this.get_save_params());
-			console.log(this.save_job_form.params);
+			console.log(this.save_job_form().params);
+			console.log($.extend({}, this.fields.data("fields")));
 			}
 		});
 	}

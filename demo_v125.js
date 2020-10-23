@@ -71,7 +71,7 @@ $(document).ready(function(){
 							$.ajax({
 								url: "/php_functions/job_check_shortage.php",
 								data: {
-									job: job_ID
+									job: job_data.ID
 								},
 								dataType: "json",
 								type: "get",

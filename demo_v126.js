@@ -89,8 +89,8 @@ $(document).ready(function(){
 								"start":"2020-11-02 08:00:00",
 								"end":"2020-11-11 08:00:00",
 								"to":"2020-11-12 08:00:00",
-								"name":user_NAME,
-								"email":user_EMAIL
+								"name":user.NAME,
+								"email":user.EMAIL
 
 							};
 							$.ajax({

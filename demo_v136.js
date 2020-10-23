@@ -100,7 +100,7 @@ $(document).ready(function(){
 								duration_scheme: "7dayw",
 								email: user.email,
 								end: "2020-11-11 08:00:00",
-								fields: {},
+								fields: $.extend({}, this.fields.data("fields")),
 								id_main: "0",
 								inv_address: "",
 								job_name: "From js",

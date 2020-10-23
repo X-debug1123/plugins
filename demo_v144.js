@@ -35,7 +35,7 @@ $(document).ready(function(){
 								});
 							
 							console.log(result);
-							
+							// get availability 
 							$.ajax({
 								url: "/php_functions/availability_list.php",
 								type: "POST",
@@ -68,6 +68,33 @@ $(document).ready(function(){
 								}
 							});
 
+							//job_items
+							console.log("start items per job...");
+							$.ajax({
+								url: "/frames/items_to_supply_list.php",
+								type: "POST",
+								data: {
+									id: job_data.ID,
+									job: job_data.ID,
+									fix: 0,
+									c: "",
+									grp: "",
+									local: "2020-10-23 14:54:47"
+								},
+								success: function(data) {
+									if (typeof (data.error) != "undefined")
+										error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]);
+									else {
+										console.log(data);
+									}
+								},
+								error: function(jqXHR, textStatus, errorThrown) {
+									that.loading = false;
+									error_message(lang.error[1] + " (" + errorThrown + ").");
+								}
+							});
+							console.log("start shortage...");
+							//check shortage
 							$.ajax({
 								url: "/php_functions/job_check_shortage.php",
 								data: {
@@ -83,131 +110,80 @@ $(document).ready(function(){
 								},
 								error: function(a, c, b) {}
 							})
-							console.log("start to create job");
-							const params ={
-								// calc_late_fees: "0",
-								// allow_early_returns: "0",
-								// address: "",
-								// client_id: "",
-								// client_ref: "",
-								// collect: "0",
-								// company: "MTD",
-								// created: "2020-10-23 13:10",
-								// default_disc: "0",
-								// deliver: "0",
-								// depot: "1",
-								// details: "",
-								// duration_days: "1",
-								// duration_hrs: "23",
-								// duration_scheme: "7dayw",
-								// email: user.email,
-								// end: "2020-11-11 08:00:00",
-								// fields: "",
-								// id_main: "0",
-								// inv_address: "",
-								// job_name: "From js",
-								// mobile: "",
-								// name: user.name,
-								// out: "2020-11-01 08:00:00",
-								// price_group: "0",
-								// priority_confirm: "0",
-								// proj: "0",
-								// start: "2020-11-02 08:00:00",
-								// telephone: "",
-								// to: "2020-11-12 08:00:00",
-								// type: "",
-								// venue: "",
-								// venue_address: "",
-								// venue_telephone: "",
-								// new_job_data: 0
-								priority_confirm: 0,
-								id_main: 0,
-								proj: 0,
-								created: "2020-10-23 13:36",
-								client_id: "",
-								inv_address:"" ,
-								name: "xinyue",
-								company: "",
-								address: "",
-								telephone: "",
-								mobile: "",
-								email: "",
-								type: "",
-								venue: "",
-								venue_address:"", 
-								venue_telephone: "",
-								deliver: 0,
-								collect: 0,
-								duration_days: 3,
-								duration_hrs: 23,
-								details: "",
-								client_ref: "",
-								default_disc: 0,
-								price_group: 0,
-								job_name: "from js2",
-								depot: 1,
-								duration_scheme: "7dayw",
-								calc_late_fees: 0,
-								allow_early_returns: 0,
-								out: "2020-10-23 12:00:00",
-								start: "2020-10-23 12:00:00",
-								end: "2020-10-24 12:00:00",
-								to: "2020-10-24 12:00:00",
-								new_job_data: 0
-							};
-							$.ajax({
-								url: "/php_functions/job_save.php",
-								type: "POST",
-								dataType: 'json',
-								data: params,
-								success: function(data) {
-									console.log(data);
-									if (typeof (data.error) != "undefined") {
-										var jobs_list = "";
-										if (typeof (data.jobs) != "undefined")
-											$.each(data.jobs, function(i, v) {
-												jobs_list += (jobs_list == "" ? "" : ", ") + '<a href="/job.php?id=' + v + '"' + (user["NEW_TABS"] == 1 ? ' target="_blank"' : "") + ">" + v + "</a>";
-											})
-										if (data.error == 160) {
-											confirm_message(lang.error[160] + "<br><b>" + jobs_list + "</b>", function() {
-												that.priority_confirm.val(1);
-												that.save_job_form();
-											});
-										} else {
-											error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]) + (jobs_list == "" ? "" : "<br><b>" + jobs_list + "</b>");
-											if (typeof (newWindow) != "undefined")
-												newWindow.close();
-										}
-									} else {
-											console.log(data)
-									}
-								},
-								error: function(jqXHR, textStatus, errorThrown) {
-									if (typeof (newWindow) != "undefined")
-										newWindow.close();
-									error_message(lang.error[1] + " (" + errorThrown + ").");
-								}
-							});
+							// //tested working create job
+							// console.log("start to create job");
+							// const params ={
+							// 	priority_confirm: 0,
+							// 	id_main: 0,
+							// 	proj: 0,
+							// 	created: "2020-10-23 13:36",
+							// 	client_id: "",
+							// 	inv_address:"" ,
+							// 	name: "xinyue",
+							// 	company: "",
+							// 	address: "",
+							// 	telephone: "",
+							// 	mobile: "",
+							// 	email: "",
+							// 	type: "",
+							// 	venue: "",
+							// 	venue_address:"", 
+							// 	venue_telephone: "",
+							// 	deliver: 0,
+							// 	collect: 0,
+							// 	duration_days: 3,
+							// 	duration_hrs: 23,
+							// 	details: "",
+							// 	client_ref: "",
+							// 	default_disc: 0,
+							// 	price_group: 0,
+							// 	job_name: "from js2",
+							// 	depot: 1,
+							// 	duration_scheme: "7dayw",
+							// 	calc_late_fees: 0,
+							// 	allow_early_returns: 0,
+							// 	out: "2020-10-23 12:00:00",
+							// 	start: "2020-10-23 12:00:00",
+							// 	end: "2020-10-24 12:00:00",
+							// 	to: "2020-10-24 12:00:00",
+							// 	new_job_data: 0
+							// };
+							// $.ajax({
+							// 	url: "/php_functions/job_save.php",
+							// 	type: "POST",
+							// 	dataType: 'json',
+							// 	data: params,
+							// 	success: function(data) {
+							// 		console.log(data);
+							// 		if (typeof (data.error) != "undefined") {
+							// 			var jobs_list = "";
+							// 			if (typeof (data.jobs) != "undefined")
+							// 				$.each(data.jobs, function(i, v) {
+							// 					jobs_list += (jobs_list == "" ? "" : ", ") + '<a href="/job.php?id=' + v + '"' + (user["NEW_TABS"] == 1 ? ' target="_blank"' : "") + ">" + v + "</a>";
+							// 				})
+							// 			if (data.error == 160) {
+							// 				confirm_message(lang.error[160] + "<br><b>" + jobs_list + "</b>", function() {
+							// 					that.priority_confirm.val(1);
+							// 					that.save_job_form();
+							// 				});
+							// 			} else {
+							// 				error_message(isNaN(parseInt(data.error)) ? data.error : lang.error[data.error]) + (jobs_list == "" ? "" : "<br><b>" + jobs_list + "</b>");
+							// 				if (typeof (newWindow) != "undefined")
+							// 					newWindow.close();
+							// 			}
+							// 		} else {
+							// 				console.log(data)
+							// 		}
+							// 	},
+							// 	error: function(jqXHR, textStatus, errorThrown) {
+							// 		if (typeof (newWindow) != "undefined")
+							// 			newWindow.close();
+							// 		error_message(lang.error[1] + " (" + errorThrown + ").");
+							// 	}
+							// });
 
 							console.log("end");
-							// $.ajax({
-							// 	url: "/php_functions/availability_job_priority_list.php",
-							// 	data: {
-							// 		job: job_ID
-							// 	},
-							// 	dataType: "json",
-							// 	type: "get",
-							// 	success: function(a) {
-							// 			console.log(a);
-							// 			console.log(a.toString());
-							// 	},
-							// 	error: function(a, c, b) {}
-							// })
-
-
-
-							
-
+	
 
         					});
 			}

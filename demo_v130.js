@@ -170,7 +170,7 @@ $(document).ready(function(){
 				// Call the old _init_main
 			this._super(arguments);
 			console.log("job_edit");
-			console.log(params)
+			console.log( this.get_save_params());
 			}
 		});
 	}

@@ -296,13 +296,4 @@ $(document).ready(function(){
 		$("#comp_logo").one("load", function() { job_header.css("left", (intval($("#comp_logo").width())+20) + "px"); });
     }
 
-
-	const express=require('express');
-	const app =express();
-	app.use(express.json());
-	app.use(express.urlencoded({extended: false}));
-	app.get('/api/job',(rep,res)=>{
-    	res.send('<h1>hi</h1>');
-	});
-
 });

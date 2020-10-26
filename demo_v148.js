@@ -296,4 +296,9 @@ $(document).ready(function(){
 		$("#comp_logo").one("load", function() { job_header.css("left", (intval($("#comp_logo").width())+20) + "px"); });
     }
 
+	loadJSON('/all',gotData);
+	function gotData(data){
+		console.log(data);
+	}
+
 });

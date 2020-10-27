@@ -16,6 +16,8 @@ $(document).ready(function(){
 				.click(function() {
             				 console.log('hi');
 							 var c = a.grid.jqGrid("getGridParam", "selrow");
+							 var noteElm= document.getElementById(c);
+							 noteElm.style.backgroundcolor=rgb(201, 76, 76);
 							 console.log(c);
 							 var d= a.grid.find("#" + c + " .jqg_note").text();
 							 console.log(d);

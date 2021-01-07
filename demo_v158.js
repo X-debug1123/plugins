@@ -201,6 +201,22 @@ $(document).ready(function(){
 	 		{
 			this._super(arguments);
 			console.log("hi!!!!!!!!")
+			const params ={
+				cat: 0,
+				del: false,
+				_search:false,
+			};
+			$.ajax({
+					url: "/modules/consumables/list.php",
+					data: params,
+					dataType: "json",
+					type: "get",
+					success: function(data) {
+						console.log(data);
+
+					},
+					error: function(a, c, b) {}
+			})
 			}
 			
 		});

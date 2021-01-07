@@ -214,8 +214,8 @@ $(document).ready(function(){
 			};
 			$.ajax({
 					url: "/php_functions/subcontractors_list.php",
-					data: {"main_id":1},
-					dataType: "json",
+					// data: {"main_id":1},
+					dataType: "local",
 					type: "GET",
 					success: function(data) {
 						console.log(data);

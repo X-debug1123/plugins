@@ -205,6 +205,11 @@ $(document).ready(function(){
 				cat: 0,
 				del: false,
 				_search:false,
+				nd:1610030052659,
+				rows:100,
+				page:1,
+				sidx:"TITLE",
+				sord:"asc"
 			};
 			$.ajax({
 					url: "/modules/consumables/list.php",

@@ -215,7 +215,11 @@ $(document).ready(function(){
 						console.log(data);
 
 					},
-					error: function(a, c, b) {}
+					error: function(jqXHR, textStatus, errorThrown) {
+						if (typeof (newWindow) != "undefined")
+							newWindow.close();
+						error_message(lang.error[1] + " (" + errorThrown + ").");
+					}
 			})
 			}
 			

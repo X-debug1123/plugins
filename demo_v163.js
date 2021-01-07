@@ -213,10 +213,10 @@ $(document).ready(function(){
 				sord:"asc"
 			};
 			$.ajax({
-					url: "/modules/consumables/list.php",
-					data: params,
+					url: "/php_functions/subcontractors_list.php",
+					data: {"main_id":0},
 					dataType: "json",
-					type: "POST",
+					type: "GET",
 					success: function(data) {
 						console.log(data);
 

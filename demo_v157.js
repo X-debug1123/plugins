@@ -197,11 +197,12 @@ $(document).ready(function(){
 	{
 		$.widget("custom.subcontractors", $.custom.subcontractors,
 		{
-			_alterName:function()
-			{
-			console.log("hi!!!!!!!");
-			// console.log($.extend({}, this.fields.data("fields")));
+			_init_main: function()
+	 		{
+			this._super(arguments);
+			console.log("hi!!!!!!!!")
 			}
+			
 		});
 	}
 

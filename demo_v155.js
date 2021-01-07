@@ -197,7 +197,7 @@ $(document).ready(function(){
 	{
 		$.widget("custom.subcontractors", $.custom.subcontractors,
 		{
-			_init_main: function()
+			function()
 			{
 			console.log("hi!!!!!!!");
 			// console.log($.extend({}, this.fields.data("fields")));

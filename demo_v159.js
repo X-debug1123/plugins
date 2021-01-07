@@ -210,7 +210,7 @@ $(document).ready(function(){
 					url: "/modules/consumables/list.php",
 					data: params,
 					dataType: "json",
-					type: "get",
+					type: "POST",
 					success: function(data) {
 						console.log(data);
 

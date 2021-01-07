@@ -202,13 +202,14 @@ $(document).ready(function(){
 			this._super(arguments);
 			console.log("hi!!!!!!!!")
 			const params ={
-				cat: 0,
-				del: false,
+				main_id:0,
+				type: 11,
+				fix: 0,
 				_search:false,
-				nd:1610030052659,
+				nd:1610032385504,
 				rows:100,
 				page:1,
-				sidx:"TITLE",
+				sidx:"ID",
 				sord:"asc"
 			};
 			$.ajax({

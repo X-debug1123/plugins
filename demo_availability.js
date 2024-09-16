@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     // Need the basic fields and to make sure api version is 1 
-    if(typeof(user)!="undefined" && typeof(hh_api_version)!="undefined" && hh_api_version<=1 && typeof(doc_type)!="undefined")
+    if(typeof(user)!="undefined" && typeof(hh_api_version)!="undefined" && hh_api_version<=1.1 && typeof(doc_type)!="undefined")
     {
         // Availability grid part number
         if(typeof($.custom.availability)!='undefined')
